@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zltel.bigdatalogindex.service_dao.test.dao.TestDao">
+	<select id="queryForList" parameterType="TestBean"  resultType="TestBean">
+ 		select * from test_test where 1=1
+	</select> 
+
+	<insert id="save" parameterType="TestBean">
+		insert into test_test (username,password)
+	 		VALUES(#{username},#{password})
+	</insert>
+	<update id="update" parameterType="TestBean">
+	  	update test_test set 
+	  			username=#{username},
+				password=#{password}
+	</update>
+	<delete id="delete" parameterType="TestBean">
+		delete from  test_test
+		 where username=#{username}
+	</delete>
+</mapper>
